@@ -10,19 +10,13 @@ module CLI =
     open System.IO
     open Process
 
+    // normalizes a directory string
+    let toFullPathIfNecessary path =
+            let di = DirectoryInfo path
+            di.FullName
+
     // converts CLI args to a tuple of (full) source & target paths
     let getDirs sourcePath targetPath = 
-        let currentDir = Environment.CurrentDirectory
-
-        let toFullPath relativePath =
-            sprintf "%s%s%s" currentDir (Path.DirectorySeparatorChar.ToString()) relativePath
-
-        let toFullPathIfNecessary path =
-            if(Path.IsPathRooted(path)) then
-                path
-            else
-                toFullPath path 
-
         (toFullPathIfNecessary sourcePath, toFullPathIfNecessary targetPath)
 
 

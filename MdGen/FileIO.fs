@@ -78,10 +78,3 @@ module FileIO =
         allFiles
             |> Seq.filter (fun f-> not (f.EndsWith(".md")))
             |> Seq.iter (fun (f:string) -> File.Copy(f, f.Replace(sourceDir, targetDir)))
-
-    let getNonEmptySiblingDirectoryNamesFor (filePath: string) =
-        let info = new FileInfo(filePath)
-        info.Directory.GetDirectories() 
-            |> Seq.filter (fun d-> Seq.length (d.EnumerateFiles()) > 0)
-            |> Seq.map (fun d-> d.Name) 
-            |> Seq.toList

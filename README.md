@@ -8,11 +8,15 @@ mdgen sourceDir tagetDir [--watch]
 
 ## Output
 
+Home page
+
 ![Home page](home.png)
+
+Document page
 
 ![Document page](doc.png)
 
-- Converts all `.md` files in `sourceDir` to HTML using a standard template into `targetDir`
+- Converts all `.md` files in `sourceDir` to HTML using a template into `targetDir`
  - The HTML title of the markdown file will be the first H1 found in the document, if found (e.g. `# My Title`)
  - Use any web server to server the contents of `targetDir`, it's just static HTML
 - Generates a `index.html` file at the root of `targetDir` with
