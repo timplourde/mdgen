@@ -159,10 +159,6 @@ footer {
     font-size: .8rem;
 }
 
-#search-results-container ul, #search-results-container div {
-    padding: 1rem;
-}
-
 li {
     margin-bottom: .5rem;
 }
@@ -178,12 +174,8 @@ li em {
 }
 
 a {
-    color: #e05038;
+    color: #D812BE;
     text-decoration: none;
-}
-
-a:hover {
-    color: #EA2F0F; 
 }
 
 h1, h2, h3 {
@@ -192,7 +184,7 @@ h1, h2, h3 {
     letter-spacing: 0.05em;
 }
 
-h1 {
+h1, h2, h3, h4, h5 {
     color: #26758B;
 }
 
@@ -202,6 +194,20 @@ blockquote {
     margin-left: 50px;
     padding-left: 15px;
     border-left: 3px solid #ccc;
+}
+
+code {
+    padding: 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 3px;
+}
+
+#search-results-container ul, #search-results-container div {
+    padding: 1rem;
 }
 
 .link-list ul {
