@@ -25,6 +25,12 @@ module Process =
             |> Seq.map fileToMarkdownListLink
             |> String.concat Environment.NewLine
 
+        let rootFiles = 
+            files
+            |> List.filter (fun f-> f.ParentDirectories.Length = 0)
+            |> Seq.map fileToMarkdownListLink
+            |> String.concat Environment.NewLine
+
         let topLevelDirectories = 
             let srcDirInfo = DirectoryInfo sourceDir
             srcDirInfo.GetDirectories()
@@ -32,7 +38,8 @@ module Process =
                 |> String.concat Environment.NewLine
 
         template.Replace("{{MOST_RECENT}}",mostRecentFiles)
-            .Replace("{{TOP_DIRECTORIES}}", topLevelDirectories)
+            .Replace("{{ROOT_DIRECTORIES}}", topLevelDirectories)
+            .Replace("{{ROOT_FILES}}", rootFiles)
             .Replace("{{CACHE_BUST}}", DateTime.Now.Ticks.ToString())
 
     // creates a File record for the home page

@@ -102,9 +102,13 @@ module Templates =
 <div class="pure-g link-list">
 <div class="pure-u-1 pure-u-md-1-2">
 
-## Top Directories
+## Directories
 
-{{TOP_DIRECTORIES}}
+{{ROOT_DIRECTORIES}}
+
+## Fies
+
+{{ROOT_FILES}}
 
 </div>
 <div class="pure-u-1 pure-u-md-1-2">
@@ -178,9 +182,12 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    border-bottom: 1px solid #eee;
+}
+
 h1, h2, h3 {
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    border-bottom: 1px solid #eee;
     letter-spacing: 0.05em;
 }
 
@@ -195,8 +202,16 @@ blockquote {
     padding-left: 15px;
     border-left: 3px solid #ccc;
 }
-
-code {
+pre {
+    word-wrap: normal;
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}
+p code {
     padding: 0;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
